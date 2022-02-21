@@ -32,7 +32,7 @@ public class LoginSteps {
 		driver = tb.onSetup();
 		
 		
-		System.out.println("Inside Step - user is on login page");
+//		System.out.println("Inside Step - user is on login page");
 		
 	
 	}
