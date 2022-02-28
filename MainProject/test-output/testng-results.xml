@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-21T22:02:21 IST" name="Suite" finished-at="2022-02-21T22:02:34 IST" duration-ms="12886">
+  <suite started-at="2022-02-28T18:17:12 IST" name="Default suite" finished-at="2022-02-28T18:17:37 IST" duration-ms="25729">
     <groups>
     </groups>
-    <test started-at="2022-02-21T22:02:21 IST" name="Test" finished-at="2022-02-21T22:02:34 IST" duration-ms="12886">
-      <class name="StepDefinition.LoginSteps">
-        <test-method is-config="true" signature="user_is_navigated_to_loginpage()[pri:0, instance:StepDefinition.LoginSteps@2b91004a]" started-at="2022-02-21T22:02:21 IST" name="user_is_navigated_to_loginpage" finished-at="2022-02-21T22:02:33 IST" duration-ms="12505" status="PASS">
+    <test started-at="2022-02-28T18:17:12 IST" name="Default test" finished-at="2022-02-28T18:17:37 IST" duration-ms="25729">
+      <class name="com.ictacademyofficial.pages.usrAdminDashboard">
+        <test-method is-config="true" signature="loginsetup()[pri:0, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:12 IST" name="loginsetup" finished-at="2022-02-28T18:17:24 IST" duration-ms="12790" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- user_is_navigated_to_loginpage -->
-        <test-method signature="user_clicks_on_login_button()[pri:0, instance:StepDefinition.LoginSteps@2b91004a]" started-at="2022-02-21T22:02:33 IST" name="user_clicks_on_login_button" finished-at="2022-02-21T22:02:34 IST" duration-ms="307" status="PASS">
+        </test-method> <!-- loginsetup -->
+        <test-method signature="Dashboard()[pri:1, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:24 IST" name="Dashboard" finished-at="2022-02-28T18:17:28 IST" duration-ms="3120" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- user_clicks_on_login_button -->
-        <test-method is-config="true" signature="user_enters_username_and_password(java.lang.String,java.lang.String)[pri:0, instance:StepDefinition.LoginSteps@2b91004a]" started-at="2022-02-21T22:02:34 IST" name="user_enters_username_and_password" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1645461154165" status="FAIL">
-          <exception class="org.testng.TestNGException">
+        </test-method> <!-- Dashboard -->
+        <test-method is-config="true" signature="screenshot(org.testng.ITestResult)[pri:0, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="screenshot" finished-at="2022-02-28T18:17:28 IST" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Dashboard status=SUCCESS method=usrAdminDashboard.Dashboard()[pri:1, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method signature="addTask()[pri:2, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="addTask" finished-at="2022-02-28T18:17:28 IST" duration-ms="181" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[
-Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @AfterMethod annotated user_enters_username_and_password.
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
+              <![CDATA[Element <input class="form-control ng-untouched ng-pristine ng-valid" name="todo" type="text"> is not clickable at point (1216,525) because another element <div class="swal2-container swal2-center swal2-backdrop-show"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-MDVV23RL', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220216172458, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 18016, moz:profile: C:\Users\Naveen\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d21ac069-8279-45d8-8179-2831889b763e]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @AfterMethod annotated user_enters_username_and_password.
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:439)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:353)
-at org.testng.internal.Parameters.createParameters(Parameters.java:708)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:168)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <input class="form-control ng-untouched ng-pristine ng-valid" name="todo" type="text"> is not clickable at point (1216,525) because another element <div class="swal2-container swal2-center swal2-backdrop-show"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-MDVV23RL', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220216172458, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 18016, moz:profile: C:\Users\Naveen\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d21ac069-8279-45d8-8179-2831889b763e
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.ictacademyofficial.pages.usrAdminDashboard.addTask(usrAdminDashboard.java:72)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -58,11 +86,41 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- user_enters_username_and_password -->
-      </class> <!-- StepDefinition.LoginSteps -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- addTask -->
+        <test-method is-config="true" signature="screenshot(org.testng.ITestResult)[pri:0, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="screenshot" finished-at="2022-02-28T18:17:28 IST" duration-ms="172" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=addTask status=FAILURE method=usrAdminDashboard.addTask()[pri:2, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method signature="pieChart()[pri:3, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="pieChart" finished-at="2022-02-28T18:17:28 IST" duration-ms="491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pieChart -->
+        <test-method is-config="true" signature="screenshot(org.testng.ITestResult)[pri:0, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="screenshot" finished-at="2022-02-28T18:17:28 IST" duration-ms="11" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=pieChart status=SUCCESS method=usrAdminDashboard.pieChart()[pri:3, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshot -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8]" started-at="2022-02-28T18:17:28 IST" name="quitBrowser" finished-at="2022-02-28T18:17:37 IST" duration-ms="8873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.ictacademyofficial.pages.usrAdminDashboard -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

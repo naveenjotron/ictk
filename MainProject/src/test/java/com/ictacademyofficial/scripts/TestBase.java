@@ -9,12 +9,15 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -50,7 +53,14 @@ public WebDriver onSetup() {
 
     if (browserName.equals("chrome")) {
     	System.setProperty("webdriver.chrome.driver", "D:\\SoftwareTestingICTAK\\Selenium\\CommonFiles\\chromedriver.exe");
-        driver = new ChromeDriver();
+    	// for faster loading of pages
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--start-maximized");
+    	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+    	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+    	capabilities.setCapability("pageLoadStrategy", "none");
+    	driver = new ChromeDriver(capabilities);
+        
 
     }
     else if (browserName.equals("firefox")) {
@@ -58,7 +68,7 @@ public WebDriver onSetup() {
     	System.setProperty("webdriver.gecko.driver", "D:\\SoftwareTestingICTAK\\Selenium\\CommonFiles\\geckodriver.exe");
         driver = new FirefoxDriver();
     }
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.get(prop.getProperty("url"));
     driver.manage().window().maximize();
     return driver;
@@ -72,12 +82,11 @@ public void tearDown(ITestResult iTestResult) throws IOException {
 }
 public String takeScreenshot(String name) throws IOException {
 	
-	
 	/*Step 1) Convert web driver object to TakesScreenshot
       Step 2) Call getScreenshotAs method to create image file
       Step 3) Copy file to Desired Location*/
 	
-    String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss").format(new Date());
+    String dateName = new SimpleDateFormat("yyyy-MM-dd.hh-mm-ss").format(new Date());
 //Take the screenshot
     File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     
