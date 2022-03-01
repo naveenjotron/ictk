@@ -1,4 +1,4 @@
-package ictacademyofficial.Scripts;
+package projectBase.Scripts;
 
 import java.io.File;
 import java.io.IOException;

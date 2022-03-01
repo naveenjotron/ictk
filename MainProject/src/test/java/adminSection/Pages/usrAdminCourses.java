@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-import ictacademyofficial.Scripts.UserLoginBase;
+import projectBase.Scripts.UserLoginBase;
 
 public class usrAdminCourses {
 	

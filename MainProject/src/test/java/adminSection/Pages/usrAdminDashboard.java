@@ -25,7 +25,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import ictacademyofficial.Scripts.*;
+import projectBase.Scripts.*;
 
 import org.testng.ITestResult;
 
