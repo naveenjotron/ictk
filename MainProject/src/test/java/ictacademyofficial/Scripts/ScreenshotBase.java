@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 
-import ictacademyofficial.Pages.*;
+import adminSection.Pages.*;
 
 public class ScreenshotBase {
 	WebDriver driver;

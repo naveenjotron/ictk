@@ -1,4 +1,4 @@
-package ictacademyofficial.Pages;
+package adminSection.Pages;
 
 import java.io.File;
 import java.io.IOException;
