@@ -2,10 +2,12 @@ package StepDefinition;
 
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
+
+import ictacademyofficial.Scripts.*;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import com.ictacademyofficial.scripts.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
