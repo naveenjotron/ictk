@@ -1,4 +1,4 @@
-package ictacademyofficial.Pages;
+package adminSection.Pages;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import ictacademyofficial.Scripts.*;
+import projectBase.Scripts.*;
 
 import org.testng.ITestResult;
 

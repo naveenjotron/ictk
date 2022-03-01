@@ -1,4 +1,4 @@
-package ictacademyofficial.Scripts;
+package projectBase.Scripts;
 
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;

@@ -3,8 +3,6 @@ package StepDefinition;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
-import ictacademyofficial.Scripts.*;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -19,6 +17,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import projectBase.Scripts.*;
 
 public class LoginSteps {
 	WebDriver driver;
