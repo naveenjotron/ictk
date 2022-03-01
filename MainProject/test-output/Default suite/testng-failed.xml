@@ -5,9 +5,11 @@
     <classes>
       <class name="com.ictacademyofficial.pages.usrAdminDashboard">
         <methods>
+          <include name="Dashboard"/>
           <include name="screenshot"/>
           <include name="loginsetup"/>
           <include name="addTask"/>
+          <include name="pieChart"/>
           <include name="quitBrowser"/>
         </methods>
       </class> <!-- com.ictacademyofficial.pages.usrAdminDashboard -->
