@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Feb 28 18:17:12 IST 2022</td>
+<td>Started on:</td><td>Tue Mar 01 13:08:02 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>25 seconds (25729 ms)</td>
+<tr><td>Total time:</td><td>37 seconds (37068 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,26 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ictacademyofficial.pages.usrAdminDashboard.addTask()'><b>addTask</b><br>Test class: com.ictacademyofficial.pages.usrAdminDashboard</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;input class=&quot;form-control ng-untouched ng-pristine ng-valid&quot; name=&quot;todo&quot; type=&quot;text&quot;&gt; is not clickable at point (1216,525) because another element &lt;div class=&quot;swal2-container swal2-center swal2-backdrop-show&quot;&gt; obscures it
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAPTOP-MDVV23RL&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.14&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220216172458, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 18016, moz:profile: C:\Users\Naveen\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d21ac069-8279-45d8-8179-2831889b763e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.ictacademyofficial.pages.usrAdminDashboard.addTask(usrAdminDashboard.java:72)
+<td title='ictacademyofficial.Pages.usrAdminDashboard.pieChartVisiblity()'><b>pieChartVisiblity</b><br>Test class: ictacademyofficial.Pages.usrAdminDashboard</td>
+<td><div><pre>java.lang.AssertionError: expected [400] but found [300]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:907)
+	at org.testng.Assert.assertEquals(Assert.java:917)
+	at ictacademyofficial.Pages.usrAdminDashboard.pieChartVisiblity(usrAdminDashboard.java:89)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -123,26 +112,15 @@ Session ID: d21ac069-8279-45d8-8179-2831889b763e
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1372137902", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1372137902'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;input class=&quot;form-control ng-untouched ng-pristine ng-valid&quot; name=&quot;todo&quot; type=&quot;text&quot;&gt; is not clickable at point (1216,525) because another element &lt;div class=&quot;swal2-container swal2-center swal2-backdrop-show&quot;&gt; obscures it
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAPTOP-MDVV23RL&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.14&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 97.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220216172458, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 18016, moz:profile: C:\Users\Naveen\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d21ac069-8279-45d8-8179-2831889b763e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.ictacademyofficial.pages.usrAdminDashboard.addTask(usrAdminDashboard.java:72)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1862674654", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1862674654'><pre>java.lang.AssertionError: expected [400] but found [300]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:907)
+	at org.testng.Assert.assertEquals(Assert.java:917)
+	at ictacademyofficial.Pages.usrAdminDashboard.pieChartVisiblity(usrAdminDashboard.java:89)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -173,7 +151,7 @@ Session ID: d21ac069-8279-45d8-8179-2831889b763e
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8</td></tr>
+<td>ictacademyofficial.Pages.usrAdminDashboard@581ac8a8</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -183,15 +161,15 @@ Session ID: d21ac069-8279-45d8-8179-2831889b763e
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.ictacademyofficial.pages.usrAdminDashboard.Dashboard()'><b>Dashboard</b><br>Test class: com.ictacademyofficial.pages.usrAdminDashboard</td>
+<td title='ictacademyofficial.Pages.usrAdminDashboard.addTask()'><b>addTask</b><br>Test class: ictacademyofficial.Pages.usrAdminDashboard</td>
 <td></td>
-<td>3</td>
-<td>com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8</td></tr>
+<td>2</td>
+<td>ictacademyofficial.Pages.usrAdminDashboard@581ac8a8</td></tr>
 <tr>
-<td title='com.ictacademyofficial.pages.usrAdminDashboard.pieChart()'><b>pieChart</b><br>Test class: com.ictacademyofficial.pages.usrAdminDashboard</td>
+<td title='ictacademyofficial.Pages.usrAdminDashboard.Dashboard()'><b>Dashboard</b><br>Test class: ictacademyofficial.Pages.usrAdminDashboard</td>
 <td></td>
-<td>0</td>
-<td>com.ictacademyofficial.pages.usrAdminDashboard@581ac8a8</td></tr>
+<td>8</td>
+<td>ictacademyofficial.Pages.usrAdminDashboard@581ac8a8</td></tr>
 </table><p>
 </body>
 </html>

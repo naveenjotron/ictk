@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ictacademyofficial.pages.usrAdminDashboard">
+      <class name="ictacademyofficial.Pages.usrAdminDashboard">
         <methods>
           <include name="screenshot"/>
           <include name="loginsetup"/>
-          <include name="addTask"/>
           <include name="quitBrowser"/>
+          <include name="pieChartVisiblity"/>
         </methods>
-      </class> <!-- com.ictacademyofficial.pages.usrAdminDashboard -->
+      </class> <!-- ictacademyofficial.Pages.usrAdminDashboard -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
