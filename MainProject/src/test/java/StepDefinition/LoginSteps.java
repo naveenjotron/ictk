@@ -1,14 +1,19 @@
 package StepDefinition;
 
+import org.testng.annotations.*;
+import org.testng.annotations.Test;
+
+import ictacademyofficial.Scripts.*;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import com.ictacademyofficial.scripts.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.FindBy;
+
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,7 +22,8 @@ import io.cucumber.java.en.When;
 
 public class LoginSteps {
 	WebDriver driver;
-	TestBase tb;
+//	TestBase tb;
+
 	@Given("user is navigated to loginpage")
 	public void user_is_navigated_to_loginpage() {
 //		System.setProperty("webdriver.gecko.driver", "D:\\SoftwareTestingICTAK\\Selenium\\CommonFiles\\geckodriver.exe");
@@ -32,8 +38,7 @@ public class LoginSteps {
 		driver = tb.onSetup();
 		
 		
-//		System.out.println("Inside Step - user is on login page");
-		
+		System.out.println("Inside Step - user is on login page");	
 	
 	}
 
@@ -42,10 +47,7 @@ public class LoginSteps {
 		
 		driver.findElement(By.cssSelector("a.btn")).click();
 		System.out.println("clicked successfully");
-		
-	}
-		
-	
+}
 
 	@Then("^user enters (.*) and (.*)$")
 	public void user_enters_username_and_password(String username,String password) {
@@ -67,18 +69,17 @@ public class LoginSteps {
 		System.out.println("Inside Steps - clicks on signin button");
 	}
 
-	@Then("user is redirected to the home page")
+	@Then("user is redirected user dashboard")
 	public void user_is_redirected_to_the_home_page() throws InterruptedException {
 		
 		System.out.println("Inside Step - user is navigated to the home page");
 		
-		if(driver.getPageSource().contains("Sauce Labs Backpack")) {
+		if(driver.getPageSource().contains("Dashboard")) {
 			
-			System.out.println("SUCCESSFULLY reached home page");
+			System.out.println("..........SUCCESSFULLY Logged-in...........");
 		
 		} else {
-			System.out.println("FAILED to get text");
+			System.out.println("*******FAILED to get text********");
 		}
-
 	}
 }

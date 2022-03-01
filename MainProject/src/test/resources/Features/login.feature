@@ -5,7 +5,7 @@ Feature: feature to test login funtionality
     When user clicks on login button
     Then user enters <username> and <password>
     And clicks on signin button
-    Then user is redirected to the home page
+    Then user is redirected user dashboard
 
     Examples: 
       | username   | password |
