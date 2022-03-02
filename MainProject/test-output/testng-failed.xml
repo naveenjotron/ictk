@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ictacademyofficial.Pages.usrAdminCourses">
+      <class name="adminSection.Pages.SuperAdminCourses">
         <methods>
           <include name="courses"/>
           <include name="login"/>
+          <include name="quitBrowser"/>
         </methods>
-      </class> <!-- ictacademyofficial.Pages.usrAdminCourses -->
+      </class> <!-- adminSection.Pages.SuperAdminCourses -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

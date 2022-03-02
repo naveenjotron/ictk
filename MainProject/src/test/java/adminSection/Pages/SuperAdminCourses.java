@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import projectBase.Scripts.UserLoginBase;
+import projectBase.Scripts.AdminLoginBase;
 
 public class SuperAdminCourses {
 	
@@ -16,8 +16,8 @@ public class SuperAdminCourses {
 	@BeforeTest	
 		public void login() throws InterruptedException {
 			
-			UserLoginBase ul;
-			ul= new UserLoginBase(driver);
+			AdminLoginBase ul;
+			ul= new AdminLoginBase(driver);
 			driver= ul.login();
 			
 	}
