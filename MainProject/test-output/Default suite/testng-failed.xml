@@ -5,6 +5,8 @@
     <classes>
       <class name="adminSection.Pages.SuperAdminCourses">
         <methods>
+          <include name="addCourse"/>
+          <include name="search"/>
           <include name="courses"/>
           <include name="login"/>
           <include name="quitBrowser"/>
