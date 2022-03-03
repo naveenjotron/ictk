@@ -2,28 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-02T19:21:00 IST" name="Default suite" finished-at="2022-03-02T19:21:20 IST" duration-ms="20465">
+  <suite started-at="2022-03-03T20:28:29 IST" name="Default suite" finished-at="2022-03-03T20:28:40 IST" duration-ms="11211">
     <groups>
     </groups>
-    <test started-at="2022-03-02T19:21:00 IST" name="Default test" finished-at="2022-03-02T19:21:20 IST" duration-ms="20465">
-      <class name="adminSection.Pages.SuperAdminCourses">
-        <test-method is-config="true" signature="login()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:00 IST" name="login" finished-at="2022-03-02T19:21:04 IST" duration-ms="4390" status="PASS">
+    <test started-at="2022-03-03T20:28:29 IST" name="Default test" finished-at="2022-03-03T20:28:40 IST" duration-ms="11211">
+      <class name="frontSection.Pages.HomePage">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:frontSection.Pages.HomePage@662b4c69]" started-at="2022-03-03T20:28:29 IST" name="startBrowser" finished-at="2022-03-03T20:28:33 IST" duration-ms="4146" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="courses()[pri:1, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:04 IST" name="courses" finished-at="2022-03-02T19:21:09 IST" duration-ms="5162" status="PASS">
+        </test-method> <!-- startBrowser -->
+        <test-method signature="_testKnowMoreButton()[pri:0, instance:frontSection.Pages.HomePage@662b4c69]" started-at="2022-03-03T20:28:33 IST" name="_testKnowMoreButton" finished-at="2022-03-03T20:28:37 IST" duration-ms="3453" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- courses -->
-        <test-method signature="search()[pri:2, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:09 IST" name="search" finished-at="2022-03-02T19:21:09 IST" duration-ms="210" status="PASS">
+        </test-method> <!-- _testKnowMoreButton -->
+        <test-method signature="testCareersButton()[pri:0, instance:frontSection.Pages.HomePage@662b4c69]" started-at="2022-03-03T20:28:37 IST" name="testCareersButton" finished-at="2022-03-03T20:28:40 IST" duration-ms="3570" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- search -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:09 IST" name="quitBrowser" finished-at="2022-03-02T19:21:20 IST" duration-ms="10676" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitBrowser -->
-      </class> <!-- adminSection.Pages.SuperAdminCourses -->
+        </test-method> <!-- testCareersButton -->
+      </class> <!-- frontSection.Pages.HomePage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
