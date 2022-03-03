@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-02T14:40:48 IST" name="Default suite" finished-at="2022-03-02T14:41:27 IST" duration-ms="39294">
+  <suite started-at="2022-03-02T19:21:00 IST" name="Default suite" finished-at="2022-03-02T19:21:20 IST" duration-ms="20465">
     <groups>
     </groups>
-    <test started-at="2022-03-02T14:40:48 IST" name="Default test" finished-at="2022-03-02T14:41:27 IST" duration-ms="39294">
+    <test started-at="2022-03-02T19:21:00 IST" name="Default test" finished-at="2022-03-02T19:21:20 IST" duration-ms="20465">
       <class name="adminSection.Pages.SuperAdminCourses">
-        <test-method is-config="true" signature="login()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T14:40:48 IST" name="login" finished-at="2022-03-02T14:41:10 IST" duration-ms="22050" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:00 IST" name="login" finished-at="2022-03-02T19:21:04 IST" duration-ms="4390" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="courses()[pri:1, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T14:41:10 IST" name="courses" finished-at="2022-03-02T14:41:16 IST" duration-ms="6249" status="PASS">
+        <test-method signature="courses()[pri:1, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:04 IST" name="courses" finished-at="2022-03-02T19:21:09 IST" duration-ms="5162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- courses -->
-        <test-method signature="search()[pri:2, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T14:41:16 IST" name="search" finished-at="2022-03-02T14:41:17 IST" duration-ms="212" status="PASS">
+        <test-method signature="search()[pri:2, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:09 IST" name="search" finished-at="2022-03-02T19:21:09 IST" duration-ms="210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T14:41:17 IST" name="quitBrowser" finished-at="2022-03-02T14:41:27 IST" duration-ms="10721" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:adminSection.Pages.SuperAdminCourses@483f6d77]" started-at="2022-03-02T19:21:09 IST" name="quitBrowser" finished-at="2022-03-02T19:21:20 IST" duration-ms="10676" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
