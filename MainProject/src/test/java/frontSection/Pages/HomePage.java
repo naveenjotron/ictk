@@ -11,6 +11,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import projectBase.Scripts.TestBase;
+
 import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,22 +25,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 	
 		private WebDriver driver;
+		TestBase tb;
 
-		@BeforeClass
-		public void startBrowser() {
-			driver=new ChromeDriver();
-			driver.get("http://64.227.132.109/LandingPage/about");
-			driver.manage().window().maximize();
+//		@BeforeClass
+//		public void startBrowser() {
+//			driver=new ChromeDriver();
+//			driver.get("http://64.227.132.109/LandingPage/about");
+//			driver.manage().window().maximize();
+//		}
+		@BeforeTest
+		public void browserSetup() {
+			tb = new TestBase();
+			driver=tb.onSetup();
 		}
-
-		@AfterClass
-		public void closeBrowser() {
-			driver.close();
+		
+		@AfterTest
+		public void closeBrowser() throws InterruptedException {
+			Thread.sleep(5000);
+			driver.quit();
 		}
 		
 
 	@Test
 		public void _testKnowMoreButton() throws InterruptedException {
+		browserSetup();
 			JavascriptExecutor jsx = (JavascriptExecutor)driver;
 			jsx.executeScript("window.scrollBy(0,5450)", "");
 			Thread.sleep(2000);
