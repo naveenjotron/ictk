@@ -122,7 +122,7 @@ public class SuperAdminCourses {
 	WebElement CourseImage=driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
 	FileInputStream CoursePhoto = new FileInputStream(System.getProperty("user.dir")
 			+"/CommonFiles/WWW_YTS_AG.jpg");
-	CourseImage.sendKeys("/CommonFiles/WWW_YTS_AG.jpg");
+//	CourseImage.sendKeys("/CommonFiles/WWW_YTS_AG.jpg");
 	
 }
 	@AfterTest
