@@ -12,31 +12,59 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.4.0</version>
+			<version>7.5</version>
 			<scope>test</scope>
 		</dependency>
 		  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-<dependency>
+	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
     <version>7.2.3</version>
-</dependency>
+	</dependency>
 
 <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-<dependency>
+	<dependency>
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-api</artifactId>
     <version>5.8.2</version>
     <scope>test</scope>
-</dependency>
+	</dependency>
 
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-<dependency>
+	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
     <version>7.2.3</version>
     <scope>test</scope>
-</dependency>
-	</dependencies>
+	</dependency>
+
+	<dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.0.0</version>
+	</dependency>
+
+  </dependencies>
+ <build>
+  <plugins>
+ 	<plugin>
+    <artifactId>maven-clean-plugin</artifactId>
+    <version>2.4.1</version>
+    <configuration>
+        <filesets>
+            <fileset>
+                <directory>test-output</directory>
+                <followSymlinks>false</followSymlinks>
+            </fileset>
+        </filesets>
+    </configuration>
+	</plugin>
+  </plugins>
+</build>
   <description>Group2</description>
 </project>
