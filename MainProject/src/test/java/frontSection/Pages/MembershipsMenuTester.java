@@ -3,11 +3,16 @@ package frontSection.Pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
 
-public class MembershipsMenuTester extends ICTWebsiteMenuTester {
+import projectBase.Scripts.TestBase;
 
+public class MembershipsMenuTester  {
+	WebDriver driver;
+	
 	private void selectDropdownOption(String menuOptionSelector) throws InterruptedException {
 
 		driver.findElement(By.id("dropdownMenuDocs")).click();
@@ -16,7 +21,7 @@ public class MembershipsMenuTester extends ICTWebsiteMenuTester {
 		driver.findElement(By.cssSelector(menuOptionSelector)).click();
 
 	}
-
+	
 	public void testICTWebsite() throws InterruptedException {
 
 		// verifying academic membership
@@ -141,15 +146,14 @@ public class MembershipsMenuTester extends ICTWebsiteMenuTester {
 
 	}
 
-	public static void main(String[] args) throws InterruptedException {
-
-		MembershipsMenuTester website = new MembershipsMenuTester();
-		website.testICTWebsite();
+public static void main(String[] args) throws InterruptedException {
+	MembershipsMenuTester website = new MembershipsMenuTester();
+	website.testICTWebsite();
 	}
-	  public void aftertest() {
-		  driver.close();
-		  System.out.println("Test Ended");
-	  }
+//	  public void aftertest() {
+//		  driver.close();
+//		  System.out.println("Test Ended");
+//	  }
 	  
 
 }

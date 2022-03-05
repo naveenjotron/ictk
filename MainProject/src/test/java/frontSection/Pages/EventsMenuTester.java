@@ -37,14 +37,14 @@ public class EventsMenuTester extends ICTWebsiteMenuTester {
 	}
 
 
-	private void testsalesforce() {
-		driver.findElement(By.id("v-pills-home-tab")).click();
-		driver.findElement(By.id("v-pills-profile-tab")).click();
-		driver.findElement(By.id("v-pills-messages-tab")).click();
-		driver.findElement(By.id("v-pills-settings-tab")).click();
-		driver.findElement(By.id("v-pills-download-tab")).click();	
-					
-	}
+//	private void testsalesforce() {
+//		driver.findElement(By.id("v-pills-home-tab")).click();
+//		driver.findElement(By.id("v-pills-profile-tab")).click();
+//		driver.findElement(By.id("v-pills-messages-tab")).click();
+//		driver.findElement(By.id("v-pills-settings-tab")).click();
+//		driver.findElement(By.id("v-pills-download-tab")).click();	
+//					
+//	}
 
 
 	public static void main(String[] args) {
