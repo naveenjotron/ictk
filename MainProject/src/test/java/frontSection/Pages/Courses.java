@@ -12,6 +12,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import projectBase.Scripts.TestBase;
+
 import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,16 +24,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Courses {
+	
+	
 	private WebDriver driver;
-
-	@BeforeClass
-	public void startBrowser() {
-		driver = new ChromeDriver();
-		driver.get("http://64.227.132.109/LandingPage");
-		driver.manage().window().maximize();
+	TestBase tb;
+	
+	@BeforeTest
+	public void browserSetup() {
+		tb = new TestBase();
+		driver=tb.onSetup();
 	}
 
-	@AfterClass
+
+	@AfterTest
 	public void closeBrowser() {
 		driver.close();
 	}
@@ -38,7 +44,6 @@ public class Courses {
 	@Test
 	public void _testCoursesMainButton() throws InterruptedException {
 		driver.get("http://64.227.132.109/LandingPage/courses");
-		// driver.findElement(By.id("dropdownMenuBlocks")).click();
 		driver.findElement(By.id("listSearch")).sendKeys("Data Science");
 		JavascriptExecutor jsx = (JavascriptExecutor) driver;
 		jsx.executeScript("window.scrollBy(0,750)", "");
@@ -46,6 +51,7 @@ public class Courses {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(driver.findElement(By.className("card-description"))).pause(2000)
 				.click(driver.findElement(By.className("btn-info"))).build().perform();
+		Thread.sleep(2000);
 	    ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(0)).close();
 		
