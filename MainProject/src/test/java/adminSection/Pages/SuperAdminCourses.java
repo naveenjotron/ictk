@@ -119,9 +119,9 @@ public class SuperAdminCourses {
 	driver.findElement(By.cssSelector("div.input-box:nth-child(17) > input")).sendKeys(PlacementList);
 	driver.findElement(By.cssSelector("div.input-box:nth-child(18) > input")).sendKeys(InternshipCertificate);
 	
-	WebElement CourseImage=driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
-	FileInputStream CoursePhoto = new FileInputStream(System.getProperty("user.dir")
-			+"/CommonFiles/WWW_YTS_AG.jpg");
+//	WebElement CourseImage=driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
+//	FileInputStream CoursePhoto = new FileInputStream(System.getProperty("user.dir")
+//			+"/CommonFiles/WWW_YTS_AG.jpg");
 //	CourseImage.sendKeys("/CommonFiles/WWW_YTS_AG.jpg");
 	
 }
