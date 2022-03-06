@@ -35,7 +35,7 @@ public class AboutUs {
 		
 		@AfterTest
 		public void closeBrowser() throws InterruptedException {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			driver.quit();
 		}
 		
