@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -12,6 +13,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +21,7 @@ import org.testng.TestNG;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.internal.Utils;
 
 import projectBase.Scripts.ExcelUtility;
 
@@ -44,12 +47,12 @@ public class SuperAdminCourses {
 
 		WebDriverWait wait=new WebDriverWait(driver, 10);
 		
+		
 		WebElement coursebtn = driver.findElement(By.cssSelector("#myDiv > li:nth-child(2) > a:nth-child(1)"));
 		wait.until(ExpectedConditions.elementToBeClickable(coursebtn));
 		coursebtn.click();
-		Thread.sleep(2000);
-		
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
+//		Thread.sleep(2000);
+			
 		}
 @Test(priority=2)
 	public void search() {
@@ -61,12 +64,12 @@ public class SuperAdminCourses {
           	System.out.println("The search result contains the keyword --- "+searchResult);
     	else
           	System.out.println("The search result doesn't contains the keyword --- "+searchResult);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	
 		
 	}
@@ -124,10 +127,18 @@ public class SuperAdminCourses {
 //			+"/CommonFiles/WWW_YTS_AG.jpg");
 //	CourseImage.sendKeys("/CommonFiles/WWW_YTS_AG.jpg");
 	
+//	driver.setFileDetector(new LocalFileDetector());
+    File CourseImage = new File(System.getProperty("user.dir") +"/CommonFiles/" + "WWW_YTS_AG.jpg");
+    Utils.log("file exists: " + CourseImage.exists());
+
+    String CourseimagePath = CourseImage.getAbsolutePath();
+    WebElement input = driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
+    input.sendKeys(CourseimagePath);
+	
 }
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 	    driver.quit();
 	}
 

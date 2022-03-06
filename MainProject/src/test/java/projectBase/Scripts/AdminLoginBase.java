@@ -14,7 +14,7 @@ public class AdminLoginBase {
 
 @BeforeTest
 	public void browserSetup(){
-		tb = new TestBase();
+		tb = new TestBase(driver);
 		driver=tb.onSetup();
 	}
 
@@ -23,8 +23,8 @@ public class AdminLoginBase {
 		browserSetup();
 	String username= "superadmin";
 	String password= "12345";
-	WebDriverWait wait=new WebDriverWait(driver, 10);
 	
+	WebDriverWait wait=new WebDriverWait(driver, 10);
 	WebElement loginbtn=driver.findElement(By.cssSelector("a.btn"));
 	wait.until(ExpectedConditions.visibilityOf(loginbtn));
 	loginbtn.click();
