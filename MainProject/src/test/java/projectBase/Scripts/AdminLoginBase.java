@@ -35,12 +35,12 @@ public class AdminLoginBase {
 	driver.findElement(By.cssSelector("div.input-group:nth-child(2) > input:nth-child(2)")).sendKeys(password);
 	System.out.println("USERNAME: " +username + " And PASSWORD: " + password);
 	driver.findElement(By.cssSelector("button.bg-gradient-info:nth-child(1)")).click();
-	try {
-		Thread.sleep(8000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+//	try {
+//		Thread.sleep(8000);
+//	} catch (InterruptedException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
 	System.out.println("........Login Successfull........");
 	return driver;
 	

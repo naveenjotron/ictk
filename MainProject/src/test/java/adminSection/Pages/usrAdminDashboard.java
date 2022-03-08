@@ -93,6 +93,7 @@ public void pieChartVisiblity() throws InterruptedException {
 
 @AfterMethod
 public void screenshot(ITestResult iTestResult) throws IOException {
+	   //Takes screenshot of errors
 //	driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 ssb=new ScreenshotBase(driver);
 ssb.tearDown(iTestResult);
