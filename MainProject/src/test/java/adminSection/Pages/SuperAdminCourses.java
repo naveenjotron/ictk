@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -12,6 +13,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +21,7 @@ import org.testng.TestNG;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.internal.Utils;
 
 import projectBase.Scripts.ExcelUtility;
 
@@ -44,12 +47,12 @@ public class SuperAdminCourses {
 
 		WebDriverWait wait=new WebDriverWait(driver, 10);
 		
+		
 		WebElement coursebtn = driver.findElement(By.cssSelector("#myDiv > li:nth-child(2) > a:nth-child(1)"));
 		wait.until(ExpectedConditions.elementToBeClickable(coursebtn));
 		coursebtn.click();
-		Thread.sleep(2000);
-		
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
+//		Thread.sleep(2000);
+			
 		}
 @Test(priority=2)
 	public void search() {
@@ -61,35 +64,35 @@ public class SuperAdminCourses {
           	System.out.println("The search result contains the keyword --- "+searchResult);
     	else
           	System.out.println("The search result doesn't contains the keyword --- "+searchResult);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	
 		
 	}
 @Test(priority=3)
 	public void addCourse() throws IOException {
-	String CourseTitle = ExcelUtility.getCellData(1, 0);
-	String CourseShortName = ExcelUtility.getCellData(1, 1);
-	String CourseType = ExcelUtility.getCellData(1, 2);
-	String ShortDiscription = ExcelUtility.getCellData(1, 3);
-	String RegistrationStatus = ExcelUtility.getCellData(1, 4);
-	String CourseCategory = ExcelUtility.getCellData(1, 5);
-	String EntranceDate = ExcelUtility.getCellData(1, 6);
-	String AboutCourse = ExcelUtility.getCellData(1, 7);
-	String ComnceDate = ExcelUtility.getCellData(1, 8);
-	String OrienDate = ExcelUtility.getCellData(1, 9);
-	String LasDateReg = ExcelUtility.getCellData(1, 10);
-	String CourseFee = ExcelUtility.getCellData(1, 11);
-	String CourseRegFee = ExcelUtility.getCellData(1, 12);
-	String CourseDuration = ExcelUtility.getCellData(1, 13);
-	String ObjectivesAgenda = ExcelUtility.getCellData(1, 14);
-	String SampleEntQuestion = ExcelUtility.getCellData(1, 15);
-	String PlacementList = ExcelUtility.getCellData(1, 16);
-	String InternshipCertificate = ExcelUtility.getCellData(1, 17);
+	String CourseTitle = ExcelUtility.getCourseCellData(1, 0);
+	String CourseShortName = ExcelUtility.getCourseCellData(1, 1);
+	String CourseType = ExcelUtility.getCourseCellData(1, 2);
+	String ShortDiscription = ExcelUtility.getCourseCellData(1, 3);
+	String RegistrationStatus = ExcelUtility.getCourseCellData(1, 4);
+	String CourseCategory = ExcelUtility.getCourseCellData(1, 5);
+	String EntranceDate = ExcelUtility.getCourseCellData(1, 6);
+	String AboutCourse = ExcelUtility.getCourseCellData(1, 7);
+	String ComnceDate = ExcelUtility.getCourseCellData(1, 8);
+	String OrienDate = ExcelUtility.getCourseCellData(1, 9);
+	String LasDateReg = ExcelUtility.getCourseCellData(1, 10);
+	String CourseFee = ExcelUtility.getCourseCellData(1, 11);
+	String CourseRegFee = ExcelUtility.getCourseCellData(1, 12);
+	String CourseDuration = ExcelUtility.getCourseCellData(1, 13);
+	String ObjectivesAgenda = ExcelUtility.getCourseCellData(1, 14);
+	String SampleEntQuestion = ExcelUtility.getCourseCellData(1, 15);
+	String PlacementList = ExcelUtility.getCourseCellData(1, 16);
+	String InternshipCertificate = ExcelUtility.getCourseCellData(1, 17);
 	
 	driver.findElement(By.cssSelector("a.btn:nth-child(1)")).click();
 	driver.findElement(By.cssSelector("div.input-box:nth-child(1) > input")).sendKeys(CourseTitle);
@@ -119,15 +122,19 @@ public class SuperAdminCourses {
 	driver.findElement(By.cssSelector("div.input-box:nth-child(17) > input")).sendKeys(PlacementList);
 	driver.findElement(By.cssSelector("div.input-box:nth-child(18) > input")).sendKeys(InternshipCertificate);
 	
-//	WebElement CourseImage=driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
-//	FileInputStream CoursePhoto = new FileInputStream(System.getProperty("user.dir")
-//			+"/CommonFiles/WWW_YTS_AG.jpg");
-//	CourseImage.sendKeys("/CommonFiles/WWW_YTS_AG.jpg");
-	
+//	driver.setFileDetector(new LocalFileDetector());
+    File CourseImage = new File(System.getProperty("user.dir") +"/CommonFiles/" + "WWW_YTS_AG.jpg");
+    Utils.log("file exists: " + CourseImage.exists());
+
+    String CourseimagePath = CourseImage.getAbsolutePath();
+    WebElement input = driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
+    input.sendKeys(CourseimagePath);
+    
+	//code to click add course btn is not added
 }
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 	    driver.quit();
 	}
 

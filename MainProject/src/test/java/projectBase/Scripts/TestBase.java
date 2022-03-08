@@ -26,6 +26,8 @@ public class TestBase {
     public static Properties prop = null;
     String driverPath1;
     String driverPath2;
+
+
 public static void TestBase() {
         try {
         	//Below line creates an object of Properties called 'prop'
@@ -68,7 +70,7 @@ public WebDriver onSetup() {
     	System.setProperty("webdriver.gecko.driver", driverPath2);
         driver = new FirefoxDriver();
     }
-//    driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.get(prop.getProperty("url"));
     driver.manage().window().maximize();
     try {
@@ -78,6 +80,9 @@ public WebDriver onSetup() {
 		e.printStackTrace();
 	}
     return driver;
+}
+public TestBase(WebDriver driver) {
+	this.driver=driver;
 }
 }
 
