@@ -3,48 +3,64 @@ package frontSection.Pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class MembershipsMenuTester extends ICTWebsiteMenuTester {
+import projectBase.Scripts.TestBase;
 
-	private void selectDropdownOption(String menuOptionSelector) throws InterruptedException {
+public class MembershipsMenuTester  {
+	
+	 private WebDriver driver;
+	 TestBase tb;
 
-		driver.findElement(By.id("dropdownMenuDocs")).click();
-		Thread.sleep(3000);
-
-		driver.findElement(By.cssSelector(menuOptionSelector)).click();
-
-	}
-
-	public void testICTWebsite() throws InterruptedException {
-
-		// verifying academic membership
-
-		String academicMembershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(1) > a";
-		selectDropdownOption(academicMembershipSelector);
-
-		testAcademicMembership();
-
-		// verifying ICTAK logo
-		driver.findElement(By.xpath("//img[@alt='main_logo']")).click();
-		driver.findElement(By.xpath("//body[@class='loaded']")).click();
-
-		// verifying corporate membership
-
-		String corporateMembershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(2) > a > h6";
-		selectDropdownOption(corporateMembershipSelector);
-
-		testCorporateMembership();
-
-		String partnershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(3) > a > h6";
-		selectDropdownOption(partnershipSelector);
-
-		testpartnership();
-
-	}
-
-	private void testCorporateMembership() {
+	 @BeforeTest
+	 public void browserSetup() {
+		 tb = new TestBase();
+		 driver=tb.onSetup();
+	 }
+	 
+	 @AfterTest
+	 public void closeBrowser() {
+		 driver.close();
+	 }
+	 @Test
+	 public void testMembership() {
+		 driver.get("http://64.227.132.109/LandingPage");
+		 driver.findElement(By.id("dropdownMenuDocs")).click();
+	 }
+	
+//	public void testICTWebsite() throws InterruptedException {
+//
+//		// verifying academic membership
+//
+//		String academicMembershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(1) > a";
+//		selectDropdownOption(academicMembershipSelector);
+//
+//		testAcademicMembership();
+//
+//		// verifying ICTAK logo
+//		driver.findElement(By.xpath("//img[@alt='main_logo']")).click();
+//		driver.findElement(By.xpath("//body[@class='loaded']")).click();
+//
+//		// verifying corporate membership
+//
+//		String corporateMembershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(2) > a > h6";
+//		selectDropdownOption(corporateMembershipSelector);
+//
+//		testCorporateMembership();
+//
+//		String partnershipSelector = "#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(3) > a > h6";
+//		selectDropdownOption(partnershipSelector);
+//
+//		testpartnership();
+//
+//	}
+    @Test
+	public void testCorporateMembership() {
 		// verifying corporate membership form
 		driver.findElement(By.cssSelector(
 				"body > app-root > app-corporate > app-bannercorporate > header > div > div.container > div > div > button"))
@@ -72,8 +88,11 @@ public class MembershipsMenuTester extends ICTWebsiteMenuTester {
 		driver.findElement(By.xpath("//input[@value='REGISTER']")).click();
 
 	}
+    @Test
 
-	private void testAcademicMembership() throws InterruptedException {
+	public void testAcademicMembership() throws InterruptedException {
+		
+		driver.findElement(By.cssSelector("#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(1) > a > h6")).click();
 
 		// to perform Scroll down on application using Selenium
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -111,6 +130,7 @@ public class MembershipsMenuTester extends ICTWebsiteMenuTester {
 	}
 
 	// verifying partnership form
+    @Test
 	public void testpartnership() {
 		driver.findElement(By.cssSelector(
 				"body > app-root > app-partnership > app-bannerpartnership > header > div > div.container > div > div > button"))
@@ -141,15 +161,14 @@ public class MembershipsMenuTester extends ICTWebsiteMenuTester {
 
 	}
 
-	public static void main(String[] args) throws InterruptedException {
-
-		MembershipsMenuTester website = new MembershipsMenuTester();
-		website.testICTWebsite();
-	}
-	  public void aftertest() {
-		  driver.close();
-		  System.out.println("Test Ended");
-	  }
+//public static void main(String[] args) throws InterruptedException {
+//	MembershipsMenuTester website = new MembershipsMenuTester();
+//	website.testICTWebsite();
+//	}
+//	  public void aftertest() {
+//		  driver.close();
+//		  System.out.println("Test Ended");
+//	  }
 	  
 
 }
