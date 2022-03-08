@@ -54,20 +54,11 @@ public class HomePage {
 			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > header > div > div > div > div > div > button")));
 			driver.findElement(By.cssSelector("body > header > div > div > div > div > div > button")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.id("dropdownMenuPages")).click();
-			Thread.sleep(2000);
-			JavascriptExecutor jsx= (JavascriptExecutor)driver;
-						jsx.executeScript("window.scrollBy(0,1500)", "");
-						Thread.sleep(2000); 
-						driver.findElement(By.cssSelector("#carouselExampleControls > div.min-vh-75.position-absolute.w-100.top-0 >"
-								+ " a.carousel-control-next > span.carousel-control-next-icon.position-absolute.bottom-50.me-n7")).click();
-						Thread.sleep(2000); 
-						jsx.executeScript("window.scrollBy(0,900)", "");
+			//driver.findElement(By.id("dropdownMenuPages")).click();
+			//Thread.sleep(2000);
 			
 }
 			
-	
-	
 	  @Test 
 	  public void _testLeftandRightScrollbar() throws InterruptedException 
 	  {
