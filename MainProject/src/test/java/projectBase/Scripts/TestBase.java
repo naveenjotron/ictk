@@ -26,6 +26,8 @@ public class TestBase {
     public static Properties prop = null;
     String driverPath1;
     String driverPath2;
+
+
 public static void TestBase() {
         try {
         	//Below line creates an object of Properties called 'prop'
