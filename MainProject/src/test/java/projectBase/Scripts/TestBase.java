@@ -70,7 +70,7 @@ public WebDriver onSetup() {
     	System.setProperty("webdriver.gecko.driver", driverPath2);
         driver = new FirefoxDriver();
     }
-//    driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.get(prop.getProperty("url"));
     driver.manage().window().maximize();
     try {
@@ -80,6 +80,9 @@ public WebDriver onSetup() {
 		e.printStackTrace();
 	}
     return driver;
+}
+public TestBase(WebDriver driver) {
+	this.driver=driver;
 }
 }
 
