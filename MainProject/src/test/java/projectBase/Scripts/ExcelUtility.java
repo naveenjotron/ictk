@@ -17,9 +17,9 @@ public class ExcelUtility {
 	    // It creates FileInputStream and set excel file and excel sheet to excelWBook and excelWSheet variables.
 
 	    
-	    public static String getCellData(int RowNum, int ColNum) throws IOException {
+	    public static String getCourseCellData(int RowNum, int ColNum) throws IOException {
 	        
-	        // Open the Excel file
+	        // Open the addCourseData Excel file
 	    	 FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir") + "/commonFiles"
 	                 + "/AddCourseData.xlsx");
 
@@ -30,6 +30,17 @@ public class ExcelUtility {
 	         
 	     }
 
+	    public static String getTestimonialCellData(int RowNum, int ColNum) throws IOException {
+	        
+	        // Open the TestimonialData Excel file
+	    	 FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir") + "/commonFiles"
+	                 + "/TestimonialData.xlsx");
+
+	    	 excelWBook = new XSSFWorkbook(ExcelFile);
+	         excelWSheet = excelWBook.getSheetAt(0);
+	         DataFormatter formatter = new DataFormatter();
+	         return formatter.formatCellValue(excelWSheet.getRow(RowNum).getCell(ColNum));
+	         
+	     }
 
 }
-//getStringCellValue()

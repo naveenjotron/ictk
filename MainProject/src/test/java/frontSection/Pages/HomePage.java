@@ -54,8 +54,8 @@ public class HomePage {
 			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > header > div > div > div > div > div > button")));
 			driver.findElement(By.cssSelector("body > header > div > div > div > div > div > button")).click();
 			Thread.sleep(2000);
-			//driver.findElement(By.id("dropdownMenuPages")).click();
-			//Thread.sleep(2000);
+
+
 			
 }
 			
