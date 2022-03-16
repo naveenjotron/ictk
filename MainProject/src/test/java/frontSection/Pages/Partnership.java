@@ -21,22 +21,18 @@ public class Partnership {
 	 public void browserSetup() {
 		 tb = new TestBase(driver);
 		 driver=tb.onSetup();
-		 driver.get("http://64.227.132.109/LandingPage");
+//		 driver.get("http://64.227.132.109/LandingPage");
 		 //selectPartner();	
 		}
-
-	private void selectPartner() {
+	 @Test(priority=1)
+	public void selectPartner() {
 		driver.findElement(By.id("dropdownMenuDocs")).click();
 		driver.findElement(By.cssSelector("#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(3) > a > span")).click();
 	}
 	 
-	 @AfterTest
-	 public void closeBrowser() {
-		 driver.close();
-	 }
-	 @Test
+	 @Test(priority=3)
 	 public void registerHere() throws InterruptedException {
-		 selectPartner();
+//		 selectPartner();
 		 driver.findElement(By.cssSelector("body > app-root > app-partnership > app-bannerpartnership > header > div > div.container > div > div > button")).click();
 		 //driver.findElement(By.cssSelector("body > app-root > app-partnership > app-bannerpartnership > header > div > div.container > div > div > button")).click();
 			JavascriptExecutor js2 = (JavascriptExecutor) driver;
@@ -77,17 +73,27 @@ public class Partnership {
 //			//driver.navigate().back();
 			
 	 }
-	// @Test
+	 @Test(priority=2)
 	 public void download() {
-		 selectPartner();
-		//		 WebDriverWait wait = new WebDriverWait(driver, 5000);
-//			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")));
+//		 selectPartner();
+//				 WebDriverWait wait = new WebDriverWait(driver, 5000);
+//			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".bg-gradient-primary")));
 //			element.click();
-	driver.findElement(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")).click();
+//	driver.findElement(By.cssSelector(".bg-gradient-primary")).click();
+			WebElement element = driver.findElement(By.cssSelector(".bg-gradient-primary"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", element);
 	 }
-	// @Test
+	 @Test(priority=4)
 	 public void registerBtn() {
-		 selectPartner();
-		 driver.findElement(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > button")).click();
+//		 selectPartner();
+		 WebElement element = driver.findElement(By.cssSelector(".bg-gradient-primary"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", element);
+	 
+	 }
+	 @AfterTest
+	 public void closeBrowser() {
+		 driver.close();
 	 }
 }
