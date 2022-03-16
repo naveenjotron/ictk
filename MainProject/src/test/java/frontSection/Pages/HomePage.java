@@ -32,9 +32,8 @@ public class HomePage {
 		TestBase tb;
 		
 		@BeforeTest
-		public void browserSetup() 
-		{
-			tb = new TestBase();
+		public void browserSetup() {
+			tb = new TestBase(driver);
 			driver=tb.onSetup();
 		}
 		
