@@ -28,27 +28,27 @@ public class TestBase {
     String driverPath2;
 
 
-public static void TestBase() {
-        try {
-        	//Below line creates an object of Properties called 'prop'
-            prop = new Properties();
-          //Below line creates an object of FileInputStream called 'ip'. 
-          //Give the path of the properties file which you have created
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources"
-                    + "/config.properties");
-            //Below line of code will load the property file
-            prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+public static void TestConfig() {
+	try {
+    	//Below line creates an object of Properties called 'prop'
+        prop = new Properties();
+      //Below line creates an object of FileInputStream called 'ip'. 
+      //Give the path of the properties file which you have created
+        FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/resources"
+                + "/config.properties");
+        //Below line of code will load the property file
+        prop.load(ip);
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
 @Parameters("browser")
 @BeforeTest
 public WebDriver onSetup() {
-    TestBase(); // for loading the configurations
+    TestConfig(); // for loading the configurations
     String browserName = prop.getProperty("browser");
     driverPath1=System.getProperty("user.dir")+"\\CommonFiles\\chromedriver.exe";
     driverPath2=System.getProperty("user.dir")+"\\CommonFiles\\geckodriver.exe";
@@ -62,28 +62,32 @@ public WebDriver onSetup() {
 //    	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 //    	capabilities.setCapability("pageLoadStrategy", "none");
     	driver = new ChromeDriver();
-        
+    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
     else if (browserName.equals("firefox")) {
     	//geckodriver
     	System.setProperty("webdriver.gecko.driver", driverPath2);
         driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.get(prop.getProperty("url"));
     driver.manage().window().maximize();
-    try {
-		Thread.sleep(2000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+    
+  
+//    try {
+//		Thread.sleep(2000);
+//	} catch (InterruptedException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
     return driver;
 }
 public TestBase(WebDriver driver) {
 	this.driver=driver;
 }
+
 }
 
 
