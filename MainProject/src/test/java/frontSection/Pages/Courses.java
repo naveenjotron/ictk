@@ -31,7 +31,7 @@ public class Courses {
 	
 	@BeforeTest
 	public void browserSetup() {
-		tb = new TestBase();
+		tb = new TestBase(driver);
 		driver=tb.onSetup();
 	}
 
