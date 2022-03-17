@@ -93,7 +93,8 @@ public class Partnership {
 	 
 	 }
 	 @AfterTest
-	 public void closeBrowser() {
+	 public void closeBrowser() throws InterruptedException {
+		 Thread.sleep(5000);
 		 driver.close();
 	 }
 }
