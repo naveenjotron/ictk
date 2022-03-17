@@ -43,27 +43,28 @@ public class Testimonial {
 	WebDriverWait wait=new WebDriverWait(driver, 10);
 //	WebElement testimonialCard = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.owl-item:nth-child(47) > div:nth-child(1) >"
 //			+ " div:nth-child(1) > div")));
-	Thread.sleep(2000);
-	WebElement testimonialCard = driver.findElement(By.cssSelector("div.owl-item:nth-child(47) > div:nth-child(1) > div:nth-child(1) > div"));
+	Thread.sleep(4000);
+	WebElement testimonialCard = driver.findElement(By.cssSelector("div.owl-item:nth-child(46) > div:nth-child(1) > div"));
 	boolean t=testimonialCard.isDisplayed();
-	do {
-	if(testimonialCard.isDisplayed()) {
-		String cardData=testimonialCard.getText();
-		System.out.println(cardData);
+	System.out.println(t);
+//	int i=1;
+//	do {
+//	if(testimonialCard.isDisplayed()) {
+//		String cardData=testimonialCard.getText();
+//		System.out.println(cardData);
+//	}
+//	else {
+		
+//	}
+//	}
+	while(t=false);	{
+		WebElement element = driver.findElement(By.cssSelector(".pt-6 > owl-carousel-o:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > i"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", element);	
 	}
-	else {
-//		WebElement element = driver.findElement(By.xpath("/html/body/app-root/app-home-main/app-testimonials/section/div[2]/owl-carousel-o/div/div[2]/div[2]"));
-//
-//		Actions actions = new Actions(driver);
-//
-//		actions.moveToElement(element).click().perform();
-//		driver.findElement(By.xpath("/html/body/app-root/app-home-main/app-testimonials/section/div[2]/owl-carousel-o/div/div[2]/div[2]")).click();
-		WebDriverWait wait1 = new WebDriverWait(driver, 10);
-		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/app-home-main/app-testimonials/section/div[2]/owl-carousel-o/div/div[2]/div[2]")));
-		driver.findElement(By.xpath("/html/body/app-root/app-home-main/app-testimonials/section/div[2]/owl-carousel-o/div/div[2]/div[2]")).click();
-	}
-	}while(t=false);
-	
+	System.out.println(t);
+	String cardData=testimonialCard.getText();
+	System.out.println(cardData);
 }
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {

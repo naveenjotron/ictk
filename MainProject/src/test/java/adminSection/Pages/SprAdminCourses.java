@@ -134,7 +134,7 @@ public class SprAdminCourses {
 //    driver.findElement(By.cssSelector("#flexSwitchCheckDefault")).click();
     
 	//code to click add course btn is not added
-//    driver.findElement(By.cssSelector(".btn.bg-gradient-primary")).click();
+    driver.findElement(By.cssSelector(".btn.bg-gradient-primary")).click();
     
 }
 	@AfterTest
