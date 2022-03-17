@@ -27,7 +27,7 @@ import projectBase.Scripts.ExcelUtility;
 
 import projectBase.Scripts.AdminLoginBase;
 
-public class SuperAdminCourses {
+public class SprAdminCourses {
 	
 	WebDriver driver;
 	
@@ -36,6 +36,7 @@ public class SuperAdminCourses {
 			AdminLoginBase ul;
 			ul= new AdminLoginBase(driver);
 			driver= ul.login();
+//			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 //			TestNG testNG = new TestNG();
 //			testNG.setUseDefaultListeners(false);
@@ -43,14 +44,15 @@ public class SuperAdminCourses {
 	}
 @Test(priority=1)
 		public void courses() throws InterruptedException {
-		driver.getPageSource().contains("Dashboard");
-
+//		driver.getPageSource().contains("Dashboard");
+		
 		WebDriverWait wait=new WebDriverWait(driver, 10);
 		
 		
 		WebElement coursebtn = driver.findElement(By.cssSelector("#myDiv > li:nth-child(2) > a:nth-child(1)"));
 		wait.until(ExpectedConditions.elementToBeClickable(coursebtn));
 		coursebtn.click();
+//		driver.wait(2000);
 //		Thread.sleep(2000);
 			
 		}
@@ -64,12 +66,12 @@ public class SuperAdminCourses {
           	System.out.println("The search result contains the keyword --- "+searchResult);
     	else
           	System.out.println("The search result doesn't contains the keyword --- "+searchResult);
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
 		
 	}
@@ -129,8 +131,11 @@ public class SuperAdminCourses {
     String CourseimagePath = CourseImage.getAbsolutePath();
     WebElement input = driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
     input.sendKeys(CourseimagePath);
+//    driver.findElement(By.cssSelector("#flexSwitchCheckDefault")).click();
     
 	//code to click add course btn is not added
+    driver.findElement(By.cssSelector(".btn.bg-gradient-primary")).click();
+    
 }
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {

@@ -36,8 +36,9 @@ public class usrAdminDashboard {
 	WebDriver driver;
 	UserLoginBase ul;
 	ScreenshotBase ssb;
+	
 @BeforeTest	
-public void loginsetup() {
+public void loginsetup() throws InterruptedException {
 //	System.setProperty("webdriver.chrome.driver", "D:\\SoftwareTestingICTAK\\Selenium\\CommonFiles\\chromedriver.exe");
 //	FirefoxOptions options = new FirefoxOptions();  
 //	options.setHeadless(false);

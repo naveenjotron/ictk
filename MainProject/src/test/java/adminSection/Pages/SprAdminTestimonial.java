@@ -15,7 +15,9 @@ import org.testng.internal.Utils;
 import projectBase.Scripts.AdminLoginBase;
 import projectBase.Scripts.ExcelUtility;
 
-public class SuperAdminTestimonial {
+public class SprAdminTestimonial  {
+	//***** To run this class separately Uncomment WebDriver  @BeforeTest @AfterTest*** 
+	//and remove extends class
 	
 WebDriver driver;
 	
@@ -25,17 +27,17 @@ WebDriver driver;
 			ul= new AdminLoginBase(driver);
 			driver= ul.login();
 	}
-	@Test(priority=1)
+	@Test(priority=4)
 	public void TestimonialTab() {
 		driver.getPageSource().contains("Dashboard");
 
-		WebDriverWait wait=new WebDriverWait(driver, 10);
+		WebDriverWait wait=new WebDriverWait(driver, 6);
 		
 		WebElement testimoBtn = driver.findElement(By.cssSelector("#myDiv > li:nth-child(3) > a"));
 		wait.until(ExpectedConditions.elementToBeClickable(testimoBtn));
 		testimoBtn.click();
 	}
-	@Test(priority=2)
+	@Test(priority=5)
 	public void searchByName() throws InterruptedException {
 		
 	//search by student name
@@ -49,7 +51,7 @@ WebDriver driver;
           	System.out.println("*****The search result doesn't contains the name**** --- "+searchResult);
 		Thread.sleep(3000);
 	}
-	@Test(priority=3)
+	@Test(priority=6)
 	public void searchByOrg() {
 	//search by Organization
 		String keyword2="provise";
@@ -64,7 +66,7 @@ WebDriver driver;
 	      	System.out.println("*****The search result doesn't contains the OrgName**** --- "+searchResult);
 		}
 
-	@Test(priority=4)
+	@Test(priority=7)
 	public void NewTestimony() throws IOException {
 		String name=ExcelUtility.getTestimonialCellData(1, 0);
 		String organisation=ExcelUtility.getTestimonialCellData(1, 1);
@@ -88,7 +90,7 @@ WebDriver driver;
 	    input.sendKeys(CourseimagePath);
 	    
 	  //code to click add course btn is not added
-	    driver.findElement(By.cssSelector("button.ms-auto")).click();
+//	    driver.findElement(By.cssSelector("button.ms-auto")).click();
 	}
 	
 	

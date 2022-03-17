@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 
 import projectBase.Scripts.AdminLoginBase;
 
-public class SuperAdminKnowledge {
+public class SprAdminKnowledge {
 WebDriver driver;
 	
 	@BeforeTest	
