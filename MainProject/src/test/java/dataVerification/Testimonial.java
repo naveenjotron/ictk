@@ -34,14 +34,11 @@ public class Testimonial {
 	String testimonial=ExcelUtility.getTestimonialCellData(1, 2);
 	String CourseTitle=ExcelUtility.getTestimonialCellData(1, 3);
 	
-	
-	WebDriverWait wait=new WebDriverWait(driver, 10);
-	
 	JavascriptExecutor js1=(JavascriptExecutor)driver;
 	  js1.executeScript("window.scrollBy(0,5000)", "");
 //	js1.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-	Thread.sleep(4000);
+	Thread.sleep(2000);
 	
 	do {
 
@@ -52,6 +49,7 @@ public class Testimonial {
 		System.out.println(cardData);
 		if(t==true)
 			break;	
+		Thread.sleep(300);
 		WebElement element = driver.findElement(By.cssSelector(".pt-6 > owl-carousel-o:nth-child(2) > "
 				+ "div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > i"));
 		JavascriptExecutor js2 = (JavascriptExecutor) driver;
@@ -60,7 +58,15 @@ public class Testimonial {
 		
 	}while(t=true);
 	
-	
+	System.out.println("....................................");
+	if(cardData.contains(name)) { System.out.println("***Student name matched***");}
+	else {System.out.println("***Student name NOT matched***");}
+	if(cardData.contains(organisation)) { System.out.println("***Organization name matched***");}
+	else {System.out.println("***Organization name NOT matched***");}
+	if(cardData.contains(testimonial)) { System.out.println("***Testimonial data matched***");}
+	else {System.out.println("***Testimonial data NOT matched***");}
+	if(cardData.contains(CourseTitle)) { System.out.println("***Course Title matched***");}
+	else {System.out.println("***Course Title NOT matched***");}
 }
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {

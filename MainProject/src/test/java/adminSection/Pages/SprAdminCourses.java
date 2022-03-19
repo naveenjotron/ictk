@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.LocalFileDetector;
@@ -131,10 +132,14 @@ public class SprAdminCourses {
     String CourseimagePath = CourseImage.getAbsolutePath();
     WebElement input = driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
     input.sendKeys(CourseimagePath);
-//    driver.findElement(By.cssSelector("#flexSwitchCheckDefault")).click();
+    WebElement statusSlider=driver.findElement(By.cssSelector("#flexSwitchCheckDefault"));
+//    statusSlider.sendKeys(Keys.RETURN);
     
 	//code to click add course btn is not added
-    driver.findElement(By.cssSelector(".btn.bg-gradient-primary")).click();
+    
+//    WebElement addCourseBtn=driver.findElement(By.cssSelector(".btn.bg-gradient-primary"));
+//    addCourseBtn.sendKeys(Keys.RETURN);
+    
     
 }
 	@AfterTest
