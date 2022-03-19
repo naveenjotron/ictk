@@ -2,10 +2,10 @@ package StepDefinition;
 
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import com.ictacademyofficial.scripts.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,6 +17,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import projectBase.Scripts.*;
 
 public class LoginSteps {
 	WebDriver driver;
@@ -32,14 +33,13 @@ public class LoginSteps {
 //		driver.manage().window().maximize();
 		
 		TestBase tb;
-		tb = new TestBase();
+		tb = new TestBase(driver);
 		driver = tb.onSetup();
 		
 		
 		System.out.println("Inside Step - user is on login page");	
 	
 	}
-
 	@When("user clicks on login button")
 	public void user_clicks_on_login_button() {
 		
@@ -58,7 +58,7 @@ public class LoginSteps {
 		
 		System.out.println("Inside Step - enter username and password");
 	}
-
+	
 	@And("clicks on signin button")
 	public void clicks_on_signin_button() {
 		

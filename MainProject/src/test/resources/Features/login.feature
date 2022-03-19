@@ -11,3 +11,4 @@ Feature: feature to test login funtionality
       | username   | password |
       | useradmin  |    12345 |
       #| superadmin |    12345 |
+      #| superadmin |     3214 |
