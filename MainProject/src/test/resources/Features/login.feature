@@ -1,3 +1,5 @@
+#NaveenJotron
+# Remove hash symbol from Examples to run all users
 Feature: feature to test login funtionality
 
   Scenario Outline: Check login is succesful with valid credentials

@@ -1,5 +1,5 @@
 package adminSection.Pages;
-
+//NaveenJotron
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -59,8 +59,7 @@ public void Dashboard() throws InterruptedException{
 	WebElement dashB;
 	dashB= wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".font-weight-bolder")));
 	
-//	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	Thread.sleep(8000);
+//	Thread.sleep(8000);
 
 }
 @Test(priority=2)
@@ -68,11 +67,10 @@ public void addTask() throws InterruptedException {
 //	Thread.sleep(2000);
 	WebElement addTaskText = driver.findElement(By.xpath("/html/body/app-root/app-dashboard/body/main"
 			+ "/div[2]/div/div[2]/div/app-todos/div/form/div[1]/div/input"));
-//	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	addTaskText.click();
 	addTaskText.sendKeys("123456");
 	driver.findElement(By.cssSelector(".fa-plus")).click();
-	 Thread.sleep(2000);
+//	 Thread.sleep(2000);
 }
 	
 	
@@ -81,7 +79,7 @@ public void addTask() throws InterruptedException {
 public void pieChartVisiblity() throws InterruptedException {
 //	Thread.sleep(2000);
 //	String expectedBanner ="ICT LIVE STATUS";
-//	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
     WebElement pieChart= driver.findElement(By.id("myChart"));
     Dimension size = pieChart.getSize();
     System.out.println("pieChartBoxSize= "+size.width);
@@ -94,11 +92,11 @@ public void pieChartVisiblity() throws InterruptedException {
 
 @AfterMethod
 public void screenshot(ITestResult iTestResult) throws IOException {
-	   //Takes screenshot of errors
-//	driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+	   //Takes screenshot of errors and screenshots will be saved at \target\  folder
+
 ssb=new ScreenshotBase(driver);
 ssb.tearDown(iTestResult);
-
+System.out.println("***Error screenshot saved in target folder***");
 }
 @AfterTest
 public void quitBrowser() throws IOException, InterruptedException {
