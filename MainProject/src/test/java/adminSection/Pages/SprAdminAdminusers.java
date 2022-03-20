@@ -102,14 +102,14 @@ public class SprAdminAdminusers {
   driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled")).click();
 }
   
-  
-  @Test(priority=4)
-  public void deleteadmin() {
-  	
-  	driver.findElement(By.cssSelector("body > app-root > app-admin-user > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(4) > tr > td.align-center.text-center.act-align > i.fas.fa-trash.ms-3.text-danger")).click();
-  	driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled.swal2-default-outline")).click();
-  	driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled")).click();
-  }
+//  
+//  @Test(priority=4)
+//  public void deleteadmin() {
+//  	
+//  	driver.findElement(By.cssSelector("body > app-root > app-admin-user > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(4) > tr > td.align-center.text-center.act-align > i.fas.fa-trash.ms-3.text-danger")).click();
+//  	driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled.swal2-default-outline")).click();
+//  	driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled")).click();
+//  }
 
   
   
