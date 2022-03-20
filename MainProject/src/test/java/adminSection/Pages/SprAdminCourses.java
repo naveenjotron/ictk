@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -134,12 +135,12 @@ public class SprAdminCourses {
     input.sendKeys(CourseimagePath);
     WebElement statusSlider=driver.findElement(By.cssSelector("#flexSwitchCheckDefault"));
     statusSlider.sendKeys(Keys.RETURN);
-   Thread.sleep(1000);
+   Thread.sleep(2000);
 	//code to click add course btn is not added
     
     WebElement addCourseBtn=driver.findElement(By.cssSelector(".btn.bg-gradient-primary"));
     addCourseBtn.sendKeys(Keys.RETURN);
-    Thread.sleep(2000);
+    Thread.sleep(3000);
     WebElement OKbtn=driver.findElement(By.cssSelector("body > div.swal2-container.swal2-center.swal2-backdrop-show > "
     		+ "div > div.swal2-actions > button.swal2-confirm.swal2-styled"));
     OKbtn.sendKeys(Keys.RETURN);
@@ -147,9 +148,13 @@ public class SprAdminCourses {
 
     @Test(priority=4, enabled=true)
     public void deleteCourse() throws InterruptedException {
-    	driver.findElement(By.xpath("/html/body/app-root/app-courses/div/main/div/div/div/div/div[2]/div/table/tbody[4]/tr/td[7]/i[3]")).click();
+    	WebElement delBtn=driver.findElement(By.xpath("/html/body/app-root/app-courses/div/main/div/div/div/div/div[2]/div/table/tbody[4]/tr/td[7]/i[3]"));
+    	JavascriptExecutor js2 = (JavascriptExecutor) driver;
+    	js2.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent"
+    				+ "('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", delBtn);
+    			
     	Thread.sleep(2000);
-    	WebElement OKbtn=driver.findElement(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
+    	WebElement OKbtn=driver.findElement(By.cssSelector(".swal2-confirm"));
     	OKbtn.sendKeys(Keys.RETURN);
     }
     
@@ -158,7 +163,7 @@ public class SprAdminCourses {
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {
 		Thread.sleep(10000);
-//	    driver.quit();
+	    driver.quit();
 	}
 
 }
