@@ -39,11 +39,11 @@ public class AboutUsTest {
 		@AfterTest
 		public void closeBrowser() throws InterruptedException {
 			//Thread.sleep(10000);
-			//driver.quit();
+			driver.quit();
 		}
 		
 //Verify Know More button under leaders section
-	@Test
+	@Test (priority=1,enabled=false)
 		public void _testKnowMoreButton() throws InterruptedException 
 	{
 		//browserSetup();
@@ -54,12 +54,12 @@ public class AboutUsTest {
 			WebDriverWait wait = new WebDriverWait(driver, 5000);
 			wait.until(ExpectedConditions.elementToBeClickable(By.className("fa-play")));
 			driver.findElement(By.className("fa-play")).click();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			
 	}
 	
 	//Verify careers button in the About Us Page
-		@Test
+	 @Test(priority=2)
 		public void testCareersButton() throws InterruptedException {
 			driver.get("http://64.227.132.109/LandingPage/about");
 			JavascriptExecutor jsx = (JavascriptExecutor)driver;
