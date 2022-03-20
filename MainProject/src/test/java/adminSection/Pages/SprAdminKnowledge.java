@@ -1,5 +1,6 @@
 package adminSection.Pages;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -8,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import org.testng.internal.Utils;
 
 import projectBase.Scripts.AdminLoginBase;
 
-public class SuperAdminKnowledge {
+public class SprAdminKnowledge {
 WebDriver driver;
 	
 	@BeforeTest	
@@ -56,6 +58,36 @@ public void search() {
 
 	
 }
+
+@Test(priority=3)
+public void addknowledge() {
+	driver.findElement(By.cssSelector("body > app-root > app-knowledgepartner > div > main > div > div > div > div > div.card-header.pb-0 > div > div.ms-auto.my-auto.mt-lg-0.mt-4 > div > a")).click();
+	
+	File CourseImage = new File(System.getProperty("user.dir") +"/CommonFiles/" + "WWW_YTS_AG.jpg");
+    Utils.log("file exists: " + CourseImage.exists());
+
+    String CourseimagePath = CourseImage.getAbsolutePath();
+    WebElement input = driver.findElement(By.cssSelector("#imm > div.input-group.input-group-dynamic.ms-5 > input"));
+    input.sendKeys(CourseimagePath);
+    
+    driver.findElement(By.cssSelector("#imm > div.button-row.d-flex.mt-4 > button")).click();
+    
+    driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled")).click();
+    
+    
+	
+	
+}
+
+@Test(priority=4)
+public void deleteknowledge() {
+	
+	driver.findElement(By.cssSelector("body > app-root > app-knowledgepartner > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(17) > tr > td.align-center.text-center.act-align > i")).click();
+	driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled.swal2-default-outline")).click();
+}
+
+
+
 @AfterTest
 public void quitBrowser() throws IOException, InterruptedException {
 	Thread.sleep(15000);

@@ -1,3 +1,5 @@
+#NaveenJotron
+# Remove hash symbol from Examples to run all users
 Feature: feature to test login funtionality
 
   Scenario Outline: Check login is succesful with valid credentials
@@ -11,3 +13,4 @@ Feature: feature to test login funtionality
       | username   | password |
       | useradmin  |    12345 |
       #| superadmin |    12345 |
+      #| superadmin |     3214 |

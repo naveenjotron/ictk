@@ -1,5 +1,5 @@
 package StepDefinition;
-
+//NaveenJotron
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
@@ -33,14 +33,13 @@ public class LoginSteps {
 //		driver.manage().window().maximize();
 		
 		TestBase tb;
-		tb = new TestBase();
+		tb = new TestBase(driver);
 		driver = tb.onSetup();
 		
 		
 		System.out.println("Inside Step - user is on login page");	
 	
 	}
-
 	@When("user clicks on login button")
 	public void user_clicks_on_login_button() {
 		
@@ -59,7 +58,7 @@ public class LoginSteps {
 		
 		System.out.println("Inside Step - enter username and password");
 	}
-
+	
 	@And("clicks on signin button")
 	public void clicks_on_signin_button() {
 		

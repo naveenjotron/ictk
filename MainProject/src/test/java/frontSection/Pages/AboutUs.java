@@ -29,13 +29,13 @@ public class AboutUs {
 		
 		@BeforeTest
 		public void browserSetup() {
-			tb = new TestBase();
+			tb = new TestBase(driver);
 			driver=tb.onSetup();
 		}
 		
 		@AfterTest
 		public void closeBrowser() throws InterruptedException {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			driver.quit();
 		}
 		
