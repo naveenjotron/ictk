@@ -1,6 +1,8 @@
 package frontSection.Pages;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -22,7 +24,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class AboutUs {
+public class AboutUsTest {
 	
 		private WebDriver driver;
 		TestBase tb;
@@ -31,19 +33,21 @@ public class AboutUs {
 		public void browserSetup() {
 			tb = new TestBase(driver);
 			driver=tb.onSetup();
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 		
 		@AfterTest
 		public void closeBrowser() throws InterruptedException {
-			Thread.sleep(10000);
-			driver.quit();
+			//Thread.sleep(10000);
+			//driver.quit();
 		}
 		
-
+//Verify Know More button under leaders section
 	@Test
-		public void _testKnowMoreButton() throws InterruptedException {
+		public void _testKnowMoreButton() throws InterruptedException 
+	{
 		//browserSetup();
-		driver.get("http://64.227.132.109/LandingPage/about");
+			driver.get("http://64.227.132.109/LandingPage/about");
 			JavascriptExecutor jsx = (JavascriptExecutor)driver;
 			jsx.executeScript("window.scrollBy(0,5450)", "");
 			Thread.sleep(2000);
@@ -53,7 +57,8 @@ public class AboutUs {
 			Thread.sleep(2000);
 			
 	}
-
+	
+	//Verify careers button in the About Us Page
 		@Test
 		public void testCareersButton() throws InterruptedException {
 			driver.get("http://64.227.132.109/LandingPage/about");
@@ -66,7 +71,7 @@ public class AboutUs {
 			Thread.sleep(5000);
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs.get(1)).close();
-			//driver.switchTo().window(tabs.get(0)).close();
+			driver.switchTo().window(tabs.get(0)).close();
 			
 		}
 
