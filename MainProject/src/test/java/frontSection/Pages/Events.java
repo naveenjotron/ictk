@@ -104,7 +104,7 @@ element1.click();
 		//driver.findElement(By.cssSelector("#v-pills-download-tab")).click();
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled=false)
 	public void register() throws InterruptedException {
 		roboticProcess();
 		WebDriverWait wait = new WebDriverWait(driver, 5000);
