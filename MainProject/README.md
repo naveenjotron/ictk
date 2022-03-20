@@ -1,5 +1,5 @@
-# ictak
-This is project to automate ictak website.
+# ictk
+This is project to automate ictk website.
 It's a temporary website only for testing purposes.
 
 *Do not run any class in projectBase.Scripts package.
