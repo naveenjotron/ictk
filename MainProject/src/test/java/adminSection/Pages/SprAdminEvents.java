@@ -48,13 +48,48 @@ public class SprAdminEvents {
 	  }
 	  
 	  
-	  @Test(priority=4)
+	  @Test(priority=5)
 	  public void deleteevents() {
 		  
-		  driver.findElement(By.cssSelector("body > app-root > app-events > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(21) > tr > td.align-center.text-center.act-align > i.fas.fa-eye.text-info")).click();
+
+			
+		  
+		  
+		  
+		  WebElement deletebtn = driver.findElement(By.cssSelector("body > app-root > app-events > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(24) > tr > td.align-center.text-center.act-align > i.fas.fa-trash.ms-3.text-danger"));
+			JavascriptExecutor js3 = (JavascriptExecutor) driver;
+			js3.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent"
+					+ "('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", deletebtn);
+			driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled.swal2-default-outline")).click();
+			
+			 
+			  WebElement deletecbtn = driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled"));
+				JavascriptExecutor js4 = (JavascriptExecutor) driver;
+				js4.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent"
+						+ "('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", deletecbtn);
+		  
+//			driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled")).sendKeys(Keys.RETURN);
+			  
+
+			
+			
+//		  driver.findElement(By.cssSelector("body > app-root > app-events > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(21) > tr > td.align-center.text-center.act-align > i.fas.fa-eye.text-info")).click();
 //			driver.findElement(By.cssSelector("body > div > div > div.swal2-actions > button.swal2-confirm.swal2-styled.swal2-default-outline")).click();
 //		  
 		  
+	  }
+	  
+	  
+	  @Test(priority=6)
+	  public void view() {
+		  
+		  
+
+		  WebElement deletecbtn = driver.findElement(By.cssSelector("body > app-root > app-events > div > main > div > div > div > div > div.card.p-3 > div > table > tbody:nth-child(3) > tr > td.align-center.text-center.act-align > i.fas.fa-eye.text-info"));
+			JavascriptExecutor js4 = (JavascriptExecutor) driver;
+			js4.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent"
+					+ "('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", deletecbtn);
+	  
 	  }
 	  
 	  
@@ -137,7 +172,7 @@ public class SprAdminEvents {
 	  
 	  
 	  
-	  @Test(priority=5)
+	  @Test(priority=4)
 		public void editevents() throws IOException, InterruptedException {
 		String EventName = ExcelUtility.getEventsCellData(1, 0);
 		String CourseName = ExcelUtility.getEventsCellData(1, 1);
