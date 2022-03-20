@@ -58,9 +58,9 @@ public class CoursesTest {
 	  Thread.sleep(2000); 
 	  driver.findElement(By.cssSelector("body > header > div.page-header.min-vh-70 > div.container > div > div > button")).click();
 	  Thread.sleep(2000); 
-	  driver.findElement(By.name("name")).sendKeys("abc");
+	  driver.findElement(By.name("name")).sendKeys("swara");
 	  Thread.sleep(2000); 
-      driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(2) > input")).sendKeys("abc@gmail.com");
+      driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(2) > input")).sendKeys("swara@gmail.com");
       Thread.sleep(2000);
       driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(3) > input")).sendKeys("22434232");
       Thread.sleep(2000);
