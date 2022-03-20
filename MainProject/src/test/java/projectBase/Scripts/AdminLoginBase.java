@@ -1,5 +1,5 @@
 package projectBase.Scripts;
-
+//NaveenJotron
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -40,12 +40,12 @@ public class AdminLoginBase {
 	System.out.println("USERNAME: " +username + " And PASSWORD: " + password);
 	driver.findElement(By.cssSelector("button.bg-gradient-info:nth-child(1)")).click();
 	
-//	try {
-//		Thread.sleep(8000);
-//	} catch (InterruptedException e) {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	}
+	try {
+		Thread.sleep(8000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	if(driver.findElement(By.cssSelector(".font-weight-bolder")) != null) {
 	System.out.println("........Login Successfull........");
 	}

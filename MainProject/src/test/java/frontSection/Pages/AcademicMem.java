@@ -20,7 +20,7 @@ public class AcademicMem {
 		public void browserSetup() {
 			tb = new TestBase(driver);
 			driver=tb.onSetup();
-			driver.get("http://64.227.132.109/LandingPage");
+//			driver.get("http://64.227.132.109/LandingPage");
 			driver.findElement(By.id("dropdownMenuDocs")).click();
 			 
 		}
@@ -42,7 +42,7 @@ public class AcademicMem {
 	 }
 	
          
-    @Test
+    @Test(priority=1)
 	 public void viewMem() throws InterruptedException {
                  viewPage();
 		 		JavascriptExecutor js2 = (JavascriptExecutor) driver;
@@ -54,7 +54,7 @@ public class AcademicMem {
 //			 
 }
 		 
-     @Test
+     @Test(priority=2)
 	 public void scroll() throws InterruptedException {
 		 viewPage();
 		 JavascriptExecutor js2 = (JavascriptExecutor) driver;
@@ -75,7 +75,7 @@ public class AcademicMem {
 					((JavascriptExecutor) driver).executeScript("arguments[0].scrollLeft += 250", scrollArea);
 
 	 }
-	@Test
+	@Test(priority=3)
 	 public void webLinks() throws InterruptedException {
 		 viewPage();
 		JavascriptExecutor js2 = (JavascriptExecutor) driver;

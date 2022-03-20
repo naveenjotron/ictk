@@ -1,5 +1,5 @@
 package projectBase.Scripts;
-
+//NaveenJotron
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -62,19 +62,19 @@ public WebDriver onSetup() {
 //    	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 //    	capabilities.setCapability("pageLoadStrategy", "none");
     	driver = new ChromeDriver();
-    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    	
 
     }
     else if (browserName.equals("firefox")) {
     	//geckodriver
     	System.setProperty("webdriver.gecko.driver", driverPath2);
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        
     }
 //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.get(prop.getProperty("url"));
     driver.manage().window().maximize();
-    
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
   
 //    try {
 //		Thread.sleep(2000);
