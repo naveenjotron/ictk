@@ -69,4 +69,17 @@ public static String getAdminCellData(int RowNum, int ColNum) throws IOException
      
  }
 
+public static String getStaffCellData(int RowNum, int ColNum) throws IOException {
+    
+    // Open the addCourseData Excel file
+	 FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir") + "/commonFiles"
+             + "/AddStaff.xlsx");
+
+	 excelWBook = new XSSFWorkbook(ExcelFile);
+     excelWSheet = excelWBook.getSheetAt(0);
+     DataFormatter formatter = new DataFormatter();
+     return formatter.formatCellValue(excelWSheet.getRow(RowNum).getCell(ColNum));
+     
+ }
+
 }
