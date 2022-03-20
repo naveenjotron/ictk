@@ -34,7 +34,7 @@ public class Partnership {
 	 public void closeBrowser() {
 		 driver.close();
 	 }
-	 @Test
+	 @Test(priority = 1)
 	 public void registerHere() throws InterruptedException {
 		 selectPartner();
 		 driver.findElement(By.cssSelector("body > app-root > app-partnership > app-bannerpartnership > header > div > div.container > div > div > button")).click();
@@ -74,20 +74,31 @@ public class Partnership {
 //			Thread.sleep(3000);
 //			//System.out.println(alert.getText());
 //			alert.accept(); // click on ok button
-//			//driver.navigate().back();
+			driver.navigate().back();
 			
 	 }
-	// @Test
+	@Test(priority = 2)
 	 public void download() {
-		 selectPartner();
-		//		 WebDriverWait wait = new WebDriverWait(driver, 5000);
-//			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")));
-//			element.click();
-	driver.findElement(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")).click();
+//		driver.findElement(By.id("dropdownMenuDocs")).click();
+//		driver.findElement(By.cssSelector("#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(3) > a > span")).click();
+	JavascriptExecutor js21 = (JavascriptExecutor) driver;
+   js21.executeScript("window.scrollBy(0,500)", "");
+
+	
+		 //selectPartner();
+			 WebDriverWait wait = new WebDriverWait(driver, 5000);
+	WebElement elementc = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")));
+		elementc.click();
+	//driver.findElement(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > a")).click();
 	 }
-	// @Test
+	// @Test(priority = 2)
 	 public void registerBtn() {
-		 selectPartner();
+			//driver.findElement(By.id("dropdownMenuDocs")).click();
+			//driver.findElement(By.cssSelector("#navigation > ul > li:nth-child(4) > ul > div.d-none.d-lg-block > ul > li:nth-child(3) > a > span")).click();
+			JavascriptExecutor js21 = (JavascriptExecutor) driver;
+	    js21.executeScript("window.scrollBy(0,500)", "");
+
+		 //selectPartner();
 		 driver.findElement(By.cssSelector("body > app-root > app-partnership > app-partnershipcontent > section > div > header > div > div > div > div > div > div > button")).click();
 	 }
 }
