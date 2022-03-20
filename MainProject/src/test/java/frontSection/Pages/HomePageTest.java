@@ -79,10 +79,7 @@ public class HomePageTest {
 		  jsx.executeScript("window.scrollBy(0,850)", ""); 
 		  Thread.sleep(2000); 
 		  driver.findElement(By.xpath("/html/body/app-root/app-home-main/app-cards/body/div/div/owl-carousel-o/div/div[2]/div[2]/i")).click(); 
-		  Thread.sleep(2000);
-		  jsx.executeScript("window.scrollBy(0,2450)", ""); 
-		 // driver.findElement(By.className("owl-prev")).click();
-		//  Thread.sleep(2000); 
+		
 		  }
 		
 	
@@ -98,11 +95,11 @@ public class HomePageTest {
 			driver.findElement(By.cssSelector("#navigation > ul > li:nth-child(3) > ul > div.d-none.d-lg-block > li:nth-child(1) > a > div > div > h6")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.cssSelector("body > header > div.page-header.min-vh-70 > div.container > div > div > button")).click();
-			 driver.findElement(By.name("name")).sendKeys("abc");
+			 driver.findElement(By.name("name")).sendKeys("sanvi");
 			  Thread.sleep(2000); 
-		      driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(2) > input")).sendKeys("dfg@gmail.com");
+		      driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(2) > input")).sendKeys("sanvi@gmail.com");
 		      Thread.sleep(2000); 
-			  driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(3) > input")).sendKeys("22434232");
+			  driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div:nth-child(3) > input")).sendKeys("2243423222");
 			  Thread.sleep(2000); 	
 			  driver.findElement(By.cssSelector("#exampleModalSignup > div > div > div > div > div.card-body.pb-3 > form > div.text-center > button")).click();
 			  driver.switchTo().alert().accept();
