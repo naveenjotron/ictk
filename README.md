@@ -5,7 +5,7 @@ It's a temporary website only for testing purposes.
 *Do not run any class in projectBase.Scripts package.
 *Do not run any class in pageFactory.pages package.
 *Do not run any class in StepDefinition package.
-.****ALL CLASSES TO BE RUN INDUVIDUALLY****
+.****ALL CLASSES TO BE RUN INDUVIDUALLY****.
 **Project needs MAVEN and TESTNG installed to run properly**
 
  dataVerification package is verify added data..... Check the console for results.
