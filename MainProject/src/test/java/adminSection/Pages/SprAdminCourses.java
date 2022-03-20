@@ -77,7 +77,7 @@ public class SprAdminCourses {
 		
 	}
 @Test(priority=3)
-	public void addCourse() throws IOException {
+	public void addCourse() throws IOException, InterruptedException {
 	String CourseTitle = ExcelUtility.getCourseCellData(1, 0);
 	String CourseShortName = ExcelUtility.getCourseCellData(1, 1);
 	String CourseType = ExcelUtility.getCourseCellData(1, 2);
@@ -133,19 +133,32 @@ public class SprAdminCourses {
     WebElement input = driver.findElement(By.cssSelector("div.input-box:nth-child(19) > input"));
     input.sendKeys(CourseimagePath);
     WebElement statusSlider=driver.findElement(By.cssSelector("#flexSwitchCheckDefault"));
-//    statusSlider.sendKeys(Keys.RETURN);
-    
+    statusSlider.sendKeys(Keys.RETURN);
+   Thread.sleep(1000);
 	//code to click add course btn is not added
     
-//    WebElement addCourseBtn=driver.findElement(By.cssSelector(".btn.bg-gradient-primary"));
-//    addCourseBtn.sendKeys(Keys.RETURN);
-    
-    
+    WebElement addCourseBtn=driver.findElement(By.cssSelector(".btn.bg-gradient-primary"));
+    addCourseBtn.sendKeys(Keys.RETURN);
+    Thread.sleep(2000);
+    WebElement OKbtn=driver.findElement(By.cssSelector("body > div.swal2-container.swal2-center.swal2-backdrop-show > "
+    		+ "div > div.swal2-actions > button.swal2-confirm.swal2-styled"));
+    OKbtn.sendKeys(Keys.RETURN);
 }
+
+    @Test(priority=4, enabled=true)
+    public void deleteCourse() throws InterruptedException {
+    	driver.findElement(By.xpath("/html/body/app-root/app-courses/div/main/div/div/div/div/div[2]/div/table/tbody[4]/tr/td[7]/i[3]")).click();
+    	Thread.sleep(2000);
+    	WebElement OKbtn=driver.findElement(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
+    	OKbtn.sendKeys(Keys.RETURN);
+    }
+    
+
+
 	@AfterTest
 	public void quitBrowser() throws IOException, InterruptedException {
 		Thread.sleep(10000);
-	    driver.quit();
+//	    driver.quit();
 	}
 
 }
